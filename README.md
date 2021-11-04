@@ -1,0 +1,1 @@
+# Smart Contract of the PaddlePunks.io NFT collection
