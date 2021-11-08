@@ -4,16 +4,15 @@ pragma solidity ^0.8.3;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-
 contract PDP is ERC721URIStorage {
     uint16 public counter=0;
     address payable public owner;
-    string public baseURI = "";
-    uint256 basePrice=0.001 ether;
+    uint256 public basePrice=0.001 ether;
     function _baseURI() internal pure override returns (string memory) {
-        return "https://metapunks.s3.eu-west-2.amazonaws.com/";
+        return "https://metapunks.s3.eu-west-1.amazonaws.com/";
     }
-       constructor()ERC721("Paddle Punks", "PDP") {
+    
+    constructor()ERC721("Paddle Punks", "PDP") {
         owner=payable(msg.sender);
     }
     
@@ -77,5 +76,4 @@ contract PDP is ERC721URIStorage {
             ));
         return ceva;
     }
-    
 }
